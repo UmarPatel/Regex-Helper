@@ -1,0 +1,20 @@
+import itertools
+
+lst = list(itertools.product(['0', '1'], repeat=4))
+lista = []
+for x in lst:
+    lista.append(''.join(x))
+match = []
+perms = []
+for x in lista:
+    perms.append(x)
+for x in lista:
+    if '110' not in x:
+        match.append(x)
+unmatch = []
+for x in perms:
+    if x not in match:
+        unmatch.append(x)
+print(perms)
+print(match)
+print(unmatch)
